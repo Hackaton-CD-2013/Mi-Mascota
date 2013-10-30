@@ -1,4 +1,4 @@
-<%= form_for @post, html: {multipart: true} do |f| %>
+<%= form_for [@pet, @post], html: {multipart: true} do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -11,14 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :photo %>
-    <%= f.file_field :photo %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
+  <% if (@pet.blank?)%>
+    <div class="field">
+      <%= f.label :photo %>
+      <%= f.file_field :photo %>
+    </div>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+  <% else %>
+    <%= image_tag @pet.photo.to_s, style: "max-width: 150px" %>
+    <p>
+      <strong>Name:</strong>
+      <%= @pet.name %>
+    </p>
+  <% end %>
   <div class="field">
     <%= f.label :address %><br>
     <%= f.text_field :address %>
@@ -29,11 +37,7 @@
   </div>
   <div class="field">
     <%= f.label :kind %><br>
-    <%= f.text_field :kind %>
-  </div>
-  <div class="field">
-    <%= f.label :pet %><br>
-    <%= f.text_field :pet %>
+    <%= select_tag "post[kind]", options_for_select([ Post::LOST, Post::FOUND, Post::ADOPTION, Post::MATE ])%>
   </div>
   <div class="actions">
     <%= f.submit %>

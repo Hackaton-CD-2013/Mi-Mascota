@@ -13,4 +13,12 @@ class Post < ActiveRecord::Base
   scope :mate,       -> { where(kind: MATE) }
 
   mount_uploader :photo, ImageUploader
+
+  def photo
+    if pet
+      pet.photo
+    else
+      super
+    end
+  end
 end

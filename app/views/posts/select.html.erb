@@ -1,0 +1,15 @@
+<h3>Seleccionar mascota</h3>
+
+<% @pets.each do |pet| %>
+  <div>
+    <%= link_to new_pet_post_path(pet) do %>
+      <%= image_tag pet.photo.to_s, style: "max-width: 150px" %>
+    <% end %>
+  </div>
+<% end %>
+
+<h3>Crear post para una mascota que no me pertenece</h3>
+
+<%= link_to 'New Post', new_post_path %>
+
+<%= link_to 'Back', posts_path %>

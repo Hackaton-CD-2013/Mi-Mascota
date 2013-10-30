@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_pet, only: [:new, :create]
   before_filter :authenticate_user!, except: [:index, :show]
 
   # GET /posts
@@ -23,9 +24,21 @@ class PostsController < ApplicationController
   def show
   end
 
+  # GET /posts/select
+  def select
+    @user = current_user
+    @pets = @user.pets
+  end
+
   # GET /posts/new
   def new
-    @post = Post.new
+    if @pet
+      @post = @pet.posts.new
+    else
+      @post = Post.new
+    end
+
+    @user = current_user
   end
 
   # GET /posts/1/edit
@@ -35,7 +48,11 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+    if @pet
+      @post = @pet.posts.new post_params
+    else
+      @post = Post.new post_params
+    end
 
     respond_to do |format|
       if @post.save
@@ -78,8 +95,12 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
+    def set_pet
+      @pet = Pet.find(params[:pet_id]) unless params[:pet_id].blank?
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:description, :kind, :pet_id, :photo, :name, :address)
+      params.require(:post).permit(:description, :kind, :photo, :name, :address)
     end
 end

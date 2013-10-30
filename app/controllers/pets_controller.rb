@@ -32,7 +32,7 @@ class PetsController < ApplicationController
 
     respond_to do |format|
       if @pet.save
-        format.html { redirect_to @pet, notice: 'Pet was successfully created.' }
+        format.html { redirect_to @pet, notice: 'Tu mascota se ha creado con éxito.' }
         format.json { render action: 'show', status: :created, location: @pet }
       else
         format.html { render action: 'new' }
@@ -46,7 +46,7 @@ class PetsController < ApplicationController
   def update
     respond_to do |format|
       if @pet.update(pet_params)
-        format.html { redirect_to @pet, notice: 'Pet was successfully updated.' }
+        format.html { redirect_to @pet, notice: 'Tu mascota se ha actualizado con éxito.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

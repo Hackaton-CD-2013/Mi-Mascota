@@ -69,9 +69,10 @@ h1, h2,h3,h4,h5,h6 {
 }
 
 .polaroid {
+  margin-bottom: 10px;
+
   a {
-    width: 220px;
-    height: 220px;
+    width: 100%;
     border: 3px solid @photoGalleryBackground;
     display: inline-block;
     background-size: cover;
@@ -88,10 +89,16 @@ h1, h2,h3,h4,h5,h6 {
       padding: 5px;
       color: @polaroidText;
     }
-  }
 
-  a:hover {
-    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      margin-top: 100%;
+    }
   }
 }
 

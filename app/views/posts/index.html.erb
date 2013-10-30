@@ -6,7 +6,7 @@
 
 <div class="row post">
   <% @posts.each do |post| %>
-    <div class="col-xs-3 col-sm-3 col-md-3 polaroid">
+    <div class="col-xs-6 col-sm-4 col-md-3 polaroid">
       <%= link_to post_path(post), { style: "background-image: url('#{image_path post.photo}');" } do %>
         <span class="image-caption"><%= post.name %></span>
       <% end %>

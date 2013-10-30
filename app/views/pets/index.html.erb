@@ -4,7 +4,7 @@
 
 <div class="row pets-grid">
   <% @pets.each do |pet| %>
-    <div class="col-xs-3 col-sm-3 col-md-3 polaroid">
+    <div class="col-xs-6 col-sm-4 col-md-3 polaroid">
       <%= link_to pet_path(pet), { style: "background-image: url('#{image_path pet.photo}');" } do %>
         <span class="image-caption"><%= pet.name %></span>
       <% end %>

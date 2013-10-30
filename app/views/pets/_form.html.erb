@@ -11,35 +11,42 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :photo %>
-    <%= f.file_field :photo %>
+  <div class="media">
+    <div class="pull-left">
+      <%= image_tag @pet.photo.to_s, style: "max-width: 150px", class: 'frame-img' %>
+    </div>
+    <div class="media-body">
+
+      <div class="form-group">
+        <label class="control-label">Nombre: </label>
+        <%= f.text_field :name, class:'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Animal: </label>
+          <%= select_tag "pet[kind]", options_for_select([ Pet::CAT, Pet::DOG, Pet::BIRD, Pet::RABBIT ]), class:'form-control' %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <label class="control-label">Raza: </label>
+    <%= f.text_field :race, class:'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :race %><br>
-    <%= f.text_field :race %>
+  <div class="form-group">
+    <label class="control-label">Peso: </label>
+    <%= f.text_field :weight, class:'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :birth %><br>
-    <%= f.date_select :birth %>
+
+  <div class="form-group">
+    <label class="control-label">Fecha de nacimiento: </label>
+    <%= f.date_field :birth, class:'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :weight %><br>
-    <%= f.text_field :weight %>
+
+  <div class="form-group">
+    <label class="control-label">H&aacute;bitos: </label>
+    <%= f.text_area :habits, class:'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :habits %><br>
-    <%= f.text_area :habits %>
-  </div>
-  <div class="field">
-    <%= f.label :kind %><br>
-    <%= select_tag "pet[kind]", options_for_select([ Pet::CAT, Pet::DOG, Pet::BIRD, Pet::RABBIT ])%>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <button type="submit">
+    <%= image_tag("plus-grey48px.png", :alt => "Enviar") %>
+    Enviar</button>
 <% end %>

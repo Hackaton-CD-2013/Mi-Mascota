@@ -1,4 +1,4 @@
-<h3>MASCOTAS EXTRAVIADAS </h3>
+<h2>VER MASCOTA</h2>
 <div class='divisor'></div>
 <div class="media">
   <div class="pull-left">
@@ -8,7 +8,7 @@
     <h3 class="media-heading"><%= @pet.name %></h3>
     <p>Raza: <%= @pet.race %></p>
     <p>Peso: <%= @pet.weight %></p>
-    <p>Cumpleaños: <%= @pet.birth %></p>
+    <p>Fecha de Nacimiento: <%= @pet.birth %></p>
   </div>
 </div>
 
@@ -19,6 +19,6 @@
   </div>
 </div>
 
-<%= link_to 'Eliminar', @pet, method: :delete, data: { confirm: 'Estás seguro?' } %>
-<%= link_to 'Editar', edit_pet_path(@pet) %> |
-<%= link_to 'Volver', pets_path %>
+<div class="add-button">
+  <%= link_to (image_tag("edit-72px.png", :alt => "Editar")), edit_pet_path(@pet) %>
+</div>

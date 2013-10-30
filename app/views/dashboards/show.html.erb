@@ -1,1 +1,8 @@
 <h1>Welcome to Mi Mascota</h1>
+
+<%= link_to 'Extraviadas', posts_path(k: Post::LOST) %>
+<%= link_to 'Encontradas', posts_path(k: Post::FOUND) %>
+<%= link_to 'Adopción', posts_path(k: Post::ADOPTION) %>
+<%= link_to 'Buscando Pareja', posts_path(k: Post::MATE) %>
+<%= link_to 'Servicios', services_path %>
+<%= link_to 'Perfil', pets_path %>

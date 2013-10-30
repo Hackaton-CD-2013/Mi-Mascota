@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'fnormal';
+  src: asset-url('dfdChasquilla.otf');
+}
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+  background-color: #435b67;
+  font-family: fnormal, Helvetica, Arial, sans-serif;  
+}
+
+body, h1, h2,h3,h4,h5,h6 {
+	font-family: fnormal, Helvetica, Arial, sans-serif;
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -121px;
+  /* Pad bottom by footer height */
+  padding: 0 0 121px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+	background-image:image-url('pttr-cerca.png');
+	background-repeat:repeat-x;
+	min-height: 121px;
+}
+
+.navbar{
+	background-image:image-url('pttr-top5.png');
+	background-repeat:repeat-x;
+	min-height: 70px;
+	background-color: transparent;
+	border-bottom: none;
+}
+

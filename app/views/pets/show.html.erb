@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag @pet.photo.to_s %>
+
 <p>
   <strong>Name:</strong>
   <%= @pet.name %>
@@ -8,11 +10,6 @@
 <p>
   <strong>Race:</strong>
   <%= @pet.race %>
-</p>
-
-<p>
-  <strong>String:</strong>
-  <%= @pet.string %>
 </p>
 
 <p>

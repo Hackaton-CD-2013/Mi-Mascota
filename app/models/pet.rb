@@ -4,4 +4,7 @@ class Pet < ActiveRecord::Base
   CAT  = 'cat'
   DOG  = 'dog'
   BIRD = 'bird'
+
+  mount_uploader :photo, ImageUploader
 end
+

@@ -3,9 +3,9 @@
 <table>
   <thead>
     <tr>
+      <th>Photo</th>
       <th>Name</th>
       <th>Race</th>
-      <th>String</th>
       <th>Birth</th>
       <th>Weight</th>
       <th>Habits</th>
@@ -20,9 +20,9 @@
   <tbody>
     <% @pets.each do |pet| %>
       <tr>
+        <td><%= image_tag @pet.photo.to_s %></td>
         <td><%= pet.name %></td>
         <td><%= pet.race %></td>
-        <td><%= pet.string %></td>
         <td><%= pet.birth %></td>
         <td><%= pet.weight %></td>
         <td><%= pet.habits %></td>

@@ -3,8 +3,10 @@
   src: asset-url('dfdChasquilla.otf');
 }
 
-@background:          #435b67;
-@generalFontColor :   white;
+@background:              #435b67;
+@generalFontColor :       white;
+@photoGalleryBackground:  white;
+@photoGalleryBorder:      #777;
 
 html,
 body {
@@ -17,6 +19,7 @@ body {
 
 h1, h2,h3,h4,h5,h6 {
 	font-family: fnormal, Helvetica, Arial, sans-serif;
+  color: @generalFontColor;
 }
 /* Wrapper for page content to push down footer */
 #wrap {
@@ -49,3 +52,27 @@ h1, h2,h3,h4,h5,h6 {
   text-align: center;
 }
 
+.polaroid {
+  width: 220px;
+
+  img {
+    border: 3px solid @photoGalleryBackground;
+    border-bottom: 22px solid @photoGalleryBackground;
+    -webkit-box-shadow: 3px 3px 3px ;
+    -moz-box-shadow: 3px 3px 3px @photoGalleryBorder;
+    box-shadow: 3px 3px 3px @photoGalleryBorder;
+  }
+
+  p {
+    text-align: center;
+    width: 100%;
+    bottom: 0px;
+    color: #888;
+  }
+}
+
+.divisor {
+  background-image:image-url('div-grey.png');
+  background-repeat:repeat-x;
+  min-height: 70px;
+}

@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20131030153256) do
   create_table "pets", force: true do |t|
     t.string   "name"
     t.string   "race"
-    t.string   "string"
     t.date     "birth"
     t.string   "weight"
     t.text     "habits"

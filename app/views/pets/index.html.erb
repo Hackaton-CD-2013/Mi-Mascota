@@ -5,6 +5,11 @@
 </div>
 
 <div class="row pets-grid">
+  <% if @pets.blank? %>
+    <span class="no-content">
+      Aún no tienes mascotas. Agrega una presionando el icono +
+    </span>
+  <% end %>
   <% @pets.each do |pet| %>
     <div class="col-xs-6 col-sm-4 col-md-3 polaroid">
       <%= link_to pet_path(pet), { style: "background-image: url('#{image_path pet.photo}');" } do %>

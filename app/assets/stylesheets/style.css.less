@@ -8,6 +8,8 @@
 @photoGalleryBackground:  white;
 @photoGalleryBorder:      #777;
 
+@polaroidText: #435b67;
+
 html,
 body {
   height: 100%;
@@ -67,33 +69,30 @@ h1, h2,h3,h4,h5,h6 {
 }
 
 .polaroid {
-  width: 220px;
-
-  img {
+  a {
+    width: 220px;
+    height: 220px;
     border: 3px solid @photoGalleryBackground;
-    border-bottom: 22px solid @photoGalleryBackground;
-    -webkit-box-shadow: 3px 3px 3px ;
-    -moz-box-shadow: 3px 3px 3px @photoGalleryBorder;
-    box-shadow: 3px 3px 3px @photoGalleryBorder;
-    width: 200px;
-    height: 200px;
+    display: inline-block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: @photoGalleryBackground;
+    background-position: center center;
+    position: relative;
+
+    .image-caption {
+      bottom: 0;
+      position: absolute;
+      background-color: rgba(255, 255, 255, .5);
+      width: 100%;
+      padding: 5px;
+      color: @polaroidText;
+    }
   }
 
-  icon {
-    text-align: right;
+  a:hover {
+    text-decoration: none;
   }
-}
-
-.polaroid-pet-name {
-  margin-top: -30px;
-  color: @background;
-  margin-left: 5px;
-  font-weight: bold;
-}
-
-.polaroid-pet-options {
-  margin-top: -30px;
-  margin-left: 95px;
 }
 
 .divisor {

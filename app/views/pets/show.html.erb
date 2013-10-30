@@ -19,5 +19,6 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_pet_path(@pet) %> |
-<%= link_to 'Back', pets_path %>
+<%= link_to 'Eliminar', @pet, method: :delete, data: { confirm: 'Estás seguro?' } %>
+<%= link_to 'Editar', edit_pet_path(@pet) %> |
+<%= link_to 'Volver', pets_path %>

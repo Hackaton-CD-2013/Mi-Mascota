@@ -41,7 +41,12 @@
 
     <div class="navbar">
       <div class="container-fluid">
-        <div class="center"><%= image_tag("logo1.png", :alt => "Mi mascota") %></div>
+        <div class="center">
+          <%= link_to dashboard_path do %>
+            <%= image_tag("ico-home48px.png", alt: "Inicio", class: "home") %>
+          <% end %>
+          <%= image_tag("logo1.png", alt: "Mi mascota") %>
+        </div>
       </div>
     </div>
       <div class="container-fluid">

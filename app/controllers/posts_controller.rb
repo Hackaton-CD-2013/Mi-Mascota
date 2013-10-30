@@ -7,12 +7,16 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     if (params["k"] == Post::LOST)
+      @title = "Extraviadas"
       @posts = Post.lost
     elsif (params["k"] == Post::FOUND)
+      @title = "Encontradas"
       @posts = Post.found
     elsif (params["k"] == Post::ADOPTION)
+      @title = "en Adopción"
       @posts = Post.adoption
     elsif (params["k"] == Post::MATE)
+      @title = "buscando Pareja"
       @posts = Post.mate
     else
       @posts = Post.all

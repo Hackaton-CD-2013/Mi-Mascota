@@ -1,39 +1,23 @@
-<h1>Listing posts</h1>
+<h1>Mascotas
+<%= @title %>
+</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Photo</th>
-      <th>Description</th>
-      <th>Kind</th>
-      <th>Pet</th>
-      <th>User</th>
-      <th>Name</th>
-      <th>Address</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="divisor"></div>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= image_tag post.photo.to_s, style: "max-width: 150px" %></td>
-        <td><%= post.description %></td>
-        <td><%= post.kind %></td>
-        <td><%= post.pet %></td>
-        <td><%= post.user %></td>
-        <td><%= post.name %></td>
-        <td><%= post.address %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row post">
+  <% @posts.each do |post| %>
+    <div class="col-xs-6 col-sm-6 col-md-6 polaroid">
+      <p><%= image_tag post.photo.to_s, style: "max-width: 150px" %></p>
+      <p class = "polaroid-pet-name"><%= post.name %></p>
+      <p class = "polaroid-pet-options">
+      <%= link_to raw('<i class="icon-search"></i>'), post %>
+      <%= link_to raw('<i class="icon-edit"></i>'), edit_pet_path(post) %>
+      <%= link_to raw('<i class="icon-trash"></i>'), post, method: :delete, data: { confirm: 'Estás seguro?' } %>
+    </p>
+  </div>
+  <% end %>
+</div>
 
-<br>
-
-<%= link_to 'New Post', select_path %>
+<div class="add-button">
+  <%= link_to (image_tag("plus-grey48px.png", :alt => "Anuncio Nuevo")), new_post_path %>
+</div>

@@ -3,10 +3,13 @@
 <table>
   <thead>
     <tr>
+      <th>Photo</th>
       <th>Description</th>
       <th>Kind</th>
       <th>Pet</th>
       <th>User</th>
+      <th>Name</th>
+      <th>Address</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,10 +19,13 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
+        <td><%= image_tag post.photo.to_s, style: "max-width: 150px" %></td>
         <td><%= post.description %></td>
         <td><%= post.kind %></td>
         <td><%= post.pet %></td>
         <td><%= post.user %></td>
+        <td><%= post.name %></td>
+        <td><%= post.address %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>

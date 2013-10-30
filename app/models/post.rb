@@ -4,4 +4,6 @@ class Post < ActiveRecord::Base
 
   LOST  = 'lost'
   FOUND = 'found'
+
+  mount_uploader :photo, ImageUploader
 end

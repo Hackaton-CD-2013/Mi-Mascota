@@ -1,8 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag @post.photo.to_s, style: "max-width: 150px" %>
+
 <p>
   <strong>Description:</strong>
   <%= @post.description %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @post.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @post.address %>
 </p>
 
 <p>

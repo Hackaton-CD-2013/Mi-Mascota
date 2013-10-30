@@ -3,9 +3,9 @@ Hackaton::Application.routes.draw do
 
   resources :posts
 
-  resources :services
+  resources :services, only: [:index, :show]
 
-  resources :categories
+  resources :categories, only: [:index, :show]
 
   resources :pets do
     resources :posts, only: [ :new, :create ]

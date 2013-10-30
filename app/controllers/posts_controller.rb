@@ -61,6 +61,7 @@ class PostsController < ApplicationController
     else
       @post = Post.new post_params
     end
+    @post.user = current_user
 
     respond_to do |format|
       if @post.save

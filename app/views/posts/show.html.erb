@@ -9,7 +9,7 @@
     <h3 class="media-heading"><%=@post.name%></h3>
     <p>Dirección: <%= @post.address %></p>
     <p>Tipo: <%= @post.kind %></p>
-    <p>Mascota: <%= @post.pet.name %></p>
+    <p>Mascota: <%= @post.name %></p>
   </div>
 </div>
 
@@ -21,5 +21,7 @@
 </div>
 
 <div class="add-button">
-  <%= link_to (image_tag("edit-72px.png", :alt => "Editar")), edit_post_path(@post) %>
+  <% if (current_user == @post.user) %>
+    <%= link_to (image_tag("edit-72px.png", :alt => "Editar")), edit_post_path(@post) %>
+  <% end %>
 </div>

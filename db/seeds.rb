@@ -6,11 +6,11 @@ user_peter = User.create email: 'peter.parker@example.com', password: '12345678'
 user_bruce = User.create email: 'bruce.wayne@example.com',  password: '12345678'
 
 # Pets
-dog_pancho = user_john.pets.create name: 'Pancho', kind: Pet::DOG
-dog_pat    = user_john.pets.create name: 'Pat',    kind: Pet::DOG
+dog_pancho = user_john.pets.create name: 'Pancho', kind: Pet::DOG, photo: File.open(File.join(Rails.root, 'public/samples/dog1.jpg'))
+dog_pat    = user_john.pets.create name: 'Pat',    kind: Pet::DOG, photo: File.open(File.join(Rails.root, 'public/samples/dog2.jpg'))
 
-cat_agatha = user_jane.pets.create name: 'Agatha', kind: Pet::CAT
-cat_minina = user_jane.pets.create name: 'Minina', kind: Pet::CAT
+cat_agatha = user_jane.pets.create name: 'Agatha', kind: Pet::CAT, photo: File.open(File.join(Rails.root, 'public/samples/cat1.jpg'))
+cat_minina = user_jane.pets.create name: 'Minina', kind: Pet::CAT, photo: File.open(File.join(Rails.root, 'public/samples/cat2.jpg'))
 
 services_by_category = {
   'Veterinario' => [ 'Animal City', '+cotas Centro Veterinario' ],

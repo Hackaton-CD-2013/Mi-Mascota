@@ -1,0 +1,7 @@
+class AddPetToPost < ActiveRecord::Migration
+  def change
+    add_column :posts, :name, :string
+    add_column :posts, :address, :string
+    add_column :posts, :photo, :string
+  end
+end

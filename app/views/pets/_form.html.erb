@@ -46,7 +46,9 @@
     <label class="control-label">H&aacute;bitos: </label>
     <%= f.text_area :habits, class:'form-control' %>
   </div>
-  <button type="submit">
-    <%= image_tag("plus-grey48px.png", :alt => "Enviar") %>
-    Enviar</button>
+  <div class="center">
+    <button type="submit" class="pet-button">
+      <%= image_tag("check-72px.png", :alt => "Enviar") %>
+    </button>
+   </div> 
 <% end %>

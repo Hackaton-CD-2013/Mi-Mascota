@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :set_pet, only: [:show, :edit, :update, :destroy]
+  before_action :set_pet, only: [:edit, :update, :destroy]
   before_filter :authenticate_user!, except: [:show]
 
   # GET /pets
@@ -12,6 +12,7 @@ class PetsController < ApplicationController
   # GET /pets/1
   # GET /pets/1.json
   def show
+    @pet = Pet.find params[:id]
   end
 
   # GET /pets/new
@@ -67,7 +68,7 @@ class PetsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pet
-      @pet = Pet.find(params[:id])
+      @pet = current_user.pets.find params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

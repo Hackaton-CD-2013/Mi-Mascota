@@ -21,4 +21,12 @@ class Post < ActiveRecord::Base
       super
     end
   end
+
+  def name
+    if pet
+      pet.name
+    else
+      super
+    end
+  end
 end

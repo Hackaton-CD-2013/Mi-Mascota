@@ -20,7 +20,7 @@
   <tbody>
     <% @pets.each do |pet| %>
       <tr>
-        <td><%= image_tag @pet.photo.to_s %></td>
+        <td><%= image_tag @pet.photo.to_s, style: "max-width: 150px" %></td>
         <td><%= pet.name %></td>
         <td><%= pet.race %></td>
         <td><%= pet.birth %></td>

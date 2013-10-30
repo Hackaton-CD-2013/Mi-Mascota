@@ -4,4 +4,8 @@ Hackaton::Application.routes.draw do
   resources :pets
 
   devise_for :users
+
+  resource :dashboard
+
+  root controller: :dashboards, action: :show
 end

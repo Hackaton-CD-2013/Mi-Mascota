@@ -1,10 +1,15 @@
-<% @pets.each do |pet| %>
-  <div>
-    <%= image_tag pet.photo.to_s, style: "max-width: 150px" %></br>
-    <%= link_to 'Ver', pet %>
-    <%= link_to 'Editar', edit_pet_path(pet) %>
-    <%= link_to 'Eliminar', pet, method: :delete, data: { confirm: 'Estás seguro?' } %>
-  </div>
-<% end %>
+<h1>Mascotas</h1>
 
-<%= link_to 'Nueva mascota', new_pet_path %>
+<div class="divisor"></div>
+
+<div class="row pets-grid">
+  <% @pets.each do |pet| %>
+    <div class="col-xs-6 col-sm-6 col-md-6 polaroid">
+      <p><%= image_tag pet.photo.to_s, style: "max-width: 150px" %></p>
+      <p><%= pet.name %></p>
+    </div>
+    <% end %>
+</div>
+
+
+<%= link_to 'Nueva Mascota', new_pet_path %>

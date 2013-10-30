@@ -18,7 +18,7 @@ body {
 }
 
 h1, h2,h3,h4,h5,h6 {
-	font-family: fnormal, Helvetica, Arial, sans-serif;
+  font-family: fnormal, Helvetica, Arial, sans-serif;
   color: @generalFontColor;
 }
 /* Wrapper for page content to push down footer */
@@ -34,23 +34,30 @@ h1, h2,h3,h4,h5,h6 {
 
 /* Set the fixed height of the footer here */
 #footer {
-	background-image:image-url('pttr-cerca.png');
-	background-repeat:repeat-x;
-	min-height: 121px;
+  background-image:image-url('pttr-cerca.png');
+  background-repeat:repeat-x;
+  min-height: 121px;
 }
 
 .navbar{
-	background-image:image-url('pttr-top5.png');
-	background-repeat:repeat-x;
-	min-height: 70px;
-	background-color: transparent;
-	border: none;
+  background-image:image-url('pttr-top5.png');
+  background-repeat:repeat-x;
+  min-height: 70px;
+  background-color: transparent;
+  border: none;
 }
 
 .center {
   float: none;
   margin: 0 auto;
   text-align: center;
+}
+
+@media (max-width: 430px) {
+  .logo {
+    width: 60%;
+    margin-top: 5px;
+  }
 }
 
 .home {

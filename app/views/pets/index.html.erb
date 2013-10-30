@@ -1,16 +1,21 @@
 <h1>Mis Mascotas</h1>
 
+<div class="divisor"></div>
+
 <div class="row pets-grid">
   <% @pets.each do |pet| %>
     <div class="col-xs-6 col-sm-6 col-md-6 polaroid">
       <p><%= image_tag pet.photo.to_s, style: "max-width: 150px" %></p>
-      <p class = "polaroid-pet-name"><%= pet.name %>
+      <p class = "polaroid-pet-name"><%= pet.name %></p>
+      <p class = "polaroid-pet-options">
         <%= link_to raw('<i class="icon-search"></i>'), pet %>
         <%= link_to raw('<i class="icon-edit"></i>'), edit_pet_path(pet) %>
         <%= link_to raw('<i class="icon-trash"></i>'), pet, method: :delete, data: { confirm: 'Estás seguro?' } %>
-      </p>
+       </p>
     </div>
     <% end %>
 </div>
 
-<%= link_to 'Nueva Mascota', new_pet_path %>
+<div class="add-button">
+  <%= link_to (image_tag("plus-grey48px.png", :alt => "Mi mascota")), new_pet_path %>
+</div>

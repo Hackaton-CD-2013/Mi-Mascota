@@ -1,8 +1,54 @@
-<h1>Welcome to Mi Mascota</h1>
-
 <%= link_to 'Extraviadas', posts_path(k: Post::LOST) %>
 <%= link_to 'Encontradas', posts_path(k: Post::FOUND) %>
 <%= link_to 'Adopción', posts_path(k: Post::ADOPTION) %>
 <%= link_to 'Buscando Pareja', posts_path(k: Post::MATE) %>
 <%= link_to 'Servicios', services_path %>
 <%= link_to 'Perfil', pets_path %>
+<div class="row">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <a href="#">
+      <div class="center">
+        <%= image_tag("ico-adoptar96px.png", :alt => "adopta") %>  
+        <h3>Adopci&oacute;n</h3>
+      </div>
+    </a>  
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <a href="#">
+      <div class="center">
+        <%= image_tag("ico-extraviado96px.png", :alt => "extraviados") %>  
+        <h3>Extraviadas</h3>
+      </div>
+    </a>  
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <a href="#">
+      <div class="center">
+        <%= image_tag("ico-pareja96px.png", :alt => "pareja") %>  
+        <h3>Buscando Pareja</h3>
+      </div> 
+    </a> 
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <a href="#">
+      <div class="center">
+        <%= image_tag("ico-plus-blue96px.png", :alt => "servicios") %>  
+        <h3>Servicios</h3>
+      </div>
+    </a>  
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <a href="#">
+      <div class="center">
+        <%= image_tag("ico-perfil96px.png", :alt => "perfil") %>  
+        <h3>Perfil</h3>
+      </div>
+    </a>  
+  </div>
+</div>

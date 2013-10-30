@@ -2,7 +2,9 @@
 <%= @title %>
 </h1>
 
-<div class="divisor"></div>
+<div class="divisor">
+  <%= image_for_post_kind(@type) %>
+</div>
 
 <div class="row post">
   <% @posts.each do |post| %>

@@ -17,3 +17,7 @@ public/uploads/
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore Finder.app generated files
+.DS_Store
+

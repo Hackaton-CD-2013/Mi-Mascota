@@ -1,11 +1,16 @@
+# Users
 user_john = User.create email: 'john.doe@example.com', password: '12345678'
 user_jane = User.create email: 'jane.doe@example.com', password: '12345678'
 
-user_john.pets.create name: 'Pancho', kind: Pet::DOG
-user_john.pets.create name: 'Pat',    kind: Pet::DOG
+user_peter = User.create email: 'peter.parker@example.com', password: '12345678'
+user_bruce = User.create email: 'bruce.wayne@example.com',  password: '12345678'
 
-user_jane.pets.create name: 'Agatha', kind: Pet::CAT
-user_jane.pets.create name: 'Minina', kind: Pet::CAT
+# Pets
+dog_pancho = user_john.pets.create name: 'Pancho', kind: Pet::DOG
+dog_pat    = user_john.pets.create name: 'Pat',    kind: Pet::DOG
+
+cat_agatha = user_jane.pets.create name: 'Agatha', kind: Pet::CAT
+cat_minina = user_jane.pets.create name: 'Minina', kind: Pet::CAT
 
 services_by_category = {
   'Veterinario' => [ 'Animal City', '+cotas Centro Veterinario' ],
@@ -20,3 +25,14 @@ services_by_category.each do |name, services|
     category.services.create name: service
   end
 end
+
+lost_pet_messages = {
+  dog_pat.id    => 'Me perdí en Los Dos Caminos',
+  cat_minina.id => 'Si me ves por la zona del cafetal, por favor llama a mi dueño'
+}
+
+lost_pet_messages.each do |pet_id, message|
+  Post.create kind: Post::LOST, description: message, pet_id: pet_id
+end
+
+Post.create kind: Post::FOUND, description: 'Encontré este perrito en La Trinidad', name: 'Desconocido', user: user_peter

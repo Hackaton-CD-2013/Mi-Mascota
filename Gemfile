@@ -46,3 +46,6 @@ end
 
 # Authentication
 gem 'devise'
+
+# Bootstrap 3 Integration
+gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'

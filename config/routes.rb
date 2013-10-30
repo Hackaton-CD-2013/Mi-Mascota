@@ -1,4 +1,6 @@
 Hackaton::Application.routes.draw do
+  resources :posts
+
   resources :services
 
   resources :categories

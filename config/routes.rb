@@ -1,4 +1,6 @@
 Hackaton::Application.routes.draw do
+  resources :services
+
   resources :categories
 
   resources :pets

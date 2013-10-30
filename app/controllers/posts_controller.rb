@@ -5,7 +5,17 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    if (params["k"] == Post::LOST)
+      @posts = Post.lost
+    elsif (params["k"] == Post::FOUND)
+      @posts = Post.found
+    elsif (params["k"] == Post::ADOPTION)
+      @posts = Post.adoption
+    elsif (params["k"] == Post::MATE)
+      @posts = Post.mate
+    else
+      @posts = Post.all
+    end
   end
 
   # GET /posts/1

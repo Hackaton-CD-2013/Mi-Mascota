@@ -7,7 +7,7 @@
 <div class="row post">
   <% @posts.each do |post| %>
     <div class="col-xs-6 col-sm-6 col-md-6 polaroid">
-      <p><%= image_tag post.photo.to_s, style: "max-width: 150px" %></p>
+      <p><%= image_tag post.photo.to_s%></p>
       <p class = "polaroid-pet-name"><%= post.name %></p>
       <p class = "polaroid-pet-options">
       <%= link_to raw('<i class="icon-search"></i>'), post %>

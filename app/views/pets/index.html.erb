@@ -5,7 +5,7 @@
 <div class="row pets-grid">
   <% @pets.each do |pet| %>
     <div class="col-xs-6 col-sm-6 col-md-6 polaroid">
-      <p><%= image_tag pet.photo.to_s, style: "max-width: 150px" %></p>
+      <p><%= image_tag pet.photo.to_s%></p>
       <p class = "polaroid-pet-name"><%= pet.name %></p>
       <p class = "polaroid-pet-options">
         <%= link_to raw('<i class="icon-search"></i>'), pet %>

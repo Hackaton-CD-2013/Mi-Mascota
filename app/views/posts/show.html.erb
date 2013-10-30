@@ -25,3 +25,24 @@
     <%= link_to (image_tag("edit-72px.png", :alt => "Editar")), edit_post_path(@post) %>
   <% end %>
 </div>
+<p>
+  <strong>Nombre:</strong>
+  <%= @post.name %>
+</p>
+
+<p>
+  <strong>Dirección:</strong>
+  <%= @post.address %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @post.kind %>
+</p>
+
+<p>
+  <strong>Mascota:</strong>
+  <%= @post.pet %>
+</p>
+
+<%= link_to 'Editar', edit_post_path(@post) %>

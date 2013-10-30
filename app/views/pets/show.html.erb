@@ -1,31 +1,23 @@
-<p id="notice"><%= notice %></p>
+<h3>MASCOTAS EXTRAVIADAS </h3>
+<div class='divisor'></div>
+<div class="media">
+  <div class="pull-left">
+     <%= image_tag @pet.photo.to_s, style: "max-width: 150px", class: 'frame-img' %>
+  </div>
+  <div class="media-body">
+    <h3 class="media-heading"><%= @pet.name %></h3>
+    <p>Raza: <%= @pet.race %></p>
+    <p>Peso: <%= @pet.weight %></p>
+    <p>Cumpleaños: <%= @pet.birth %></p>
+  </div>
+</div>
 
-<%= image_tag @pet.photo, style: "max-width: 150px" %>
-
-<p>
-  <strong>Name:</strong>
-  <%= @pet.name %>
-</p>
-
-<p>
-  <strong>Race:</strong>
-  <%= @pet.race %>
-</p>
-
-<p>
-  <strong>Birth:</strong>
-  <%= @pet.birth %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @pet.weight %>
-</p>
-
-<p>
-  <strong>Habits:</strong>
-  <%= @pet.habits %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">H&aacute;bitos</div>
+  <div class="panel-body">
+    <p><%= @pet.habits %></p>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %>

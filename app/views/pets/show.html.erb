@@ -11,10 +11,12 @@
     <p>Fecha de Nacimiento: <%= @pet.birth %></p>
   </div>
 </div>
-<%= link_to pet_path(@pet, format: :png), target: "_blank", class: "has-tooltip qr-link", 
-    data: { toggle: "tooltip", placement: "bottom" }, title: "Generalo e imprimelo en la placa de tu mascota. En caso de
-    extravío podrán contactarte" do %>
-  <span class="qr-link-caption">Generar código QR</span>
+<% if (current_user == @pet.user) %>
+  <%= link_to pet_path(@pet, format: :png), target: "_blank", class: "has-tooltip qr-link", 
+      data: { toggle: "tooltip", placement: "bottom" }, title: "Generalo e imprimelo en la placa de tu mascota. En caso de
+      extravío podrán contactarte" do %>
+    <span class="qr-link-caption">Generar código QR</span>
+  <% end %>
 <% end %>
 <div class="panel panel-default">
   <div class="panel-heading">H&aacute;bitos</div>
@@ -22,7 +24,8 @@
     <p><%= @pet.habits %></p>
   </div>
 </div>
-
+<% if (current_user == @pet.user) %>
 <div class="add-button">
   <%= link_to (image_tag("edit-72px.png", :alt => "Editar")), edit_pet_path(@pet) %>
 </div>
+<% end %>

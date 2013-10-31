@@ -34,6 +34,10 @@ gem 'carrierwave'
 # Authentication
 gem 'devise'
 
+# QR Code
+gem 'rqrcode-rails3'
+gem 'mini_magick'
+
 # Bootstrap 3 Integration
 gem 'therubyracer', platforms: :ruby
 gem 'less-rails'

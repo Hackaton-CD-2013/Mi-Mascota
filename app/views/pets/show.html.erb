@@ -9,6 +9,11 @@
     <p>Raza: <%= @pet.race %></p>
     <p>Peso: <%= @pet.weight %></p>
     <p>Fecha de Nacimiento: <%= @pet.birth %></p>
+
+    <%= link_to pet_path(@pet, format: :png), target: "_blank" do %>
+      <%= image_tag("qr.png") %>
+      <span class="qr-link-caption">Generar código QR</span>
+    <% end %>
   </div>
 </div>
 

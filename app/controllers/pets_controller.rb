@@ -13,6 +13,10 @@ class PetsController < ApplicationController
   # GET /pets/1.json
   def show
     @pet = Pet.find params[:id]
+    respond_to do |format|
+      format.html
+      format.png  { render :qrcode => pet_url, size: 5 }
+    end
   end
 
   # GET /pets/new

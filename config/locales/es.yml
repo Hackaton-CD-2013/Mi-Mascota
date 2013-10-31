@@ -1,0 +1,7 @@
+es:
+  pet:
+    kind:
+      cat: Gato
+      dog: Perro
+      bird: Ave
+      rabbit: Conejo

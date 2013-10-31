@@ -8,4 +8,11 @@ module ApplicationHelper
       image_tag("ico-pareja48px.png", alt: "Pareja")
     end
   end
+
+  def pet_kinds_for_select
+    kinds = [ Pet::CAT, Pet::DOG, Pet::BIRD, Pet::RABBIT ]
+    translations = kinds.map { |kind| I18n.translate "pet.kind.#{kind}" }
+
+    options_for_select translations.zip(kinds)
+  end
 end

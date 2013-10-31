@@ -29,7 +29,7 @@
 
   <div class="form-group">
     <label class="control-label">Animal: </label>
-      <%= select_tag "pet[kind]", options_for_select([ Pet::CAT, Pet::DOG, Pet::BIRD, Pet::RABBIT ]), class:'form-control' %>
+      <%= select_tag "pet[kind]", pet_kinds_for_select, class:'form-control' %>
   </div>
 
   <div class="form-group">

@@ -13,22 +13,12 @@
     </div>
   <% end %>
 
-  <% if (@pet.blank?)%>
+  <div class="center">
+      <%= image_tag @post.photo.to_s, style: "max-width: 150px", class: 'frame-img' %>
     <div class="field">
-      <%= f.label :Foto %>
       <%= f.file_field :photo %>
     </div>
-    <div class="form-group">
-      <label class="control-label">Nombre: </label>
-      <%= f.text_field :name, class:'form-control' %>
-    </div>
-  <% else %>
-    <%= image_tag @pet.photo.to_s, style: "max-width: 150px" %>
-    <p>
-      <strong>Name:</strong>
-      <%= @pet.name %>
-    </p>
-  <% end %>
+  </div>
 
   <div class="form-group">
     <label class="control-label">Dirección: </label>

@@ -15,4 +15,11 @@ module ApplicationHelper
 
     options_for_select translations.zip(kinds)
   end
+
+  def post_kinds_for_select
+    kinds = [ Post::LOST, Post::FOUND, Post::ADOPTION, Post::MATE ]
+    translations = kinds.map { |kind| I18n.translate "post.kind.#{kind}" }
+
+    options_for_select translations.zip(kinds)
+  end
 end

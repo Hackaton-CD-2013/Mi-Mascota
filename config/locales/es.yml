@@ -5,3 +5,9 @@ es:
       dog: Perro
       bird: Ave
       rabbit: Conejo
+  post:
+    kind:
+      lost: Extraviado
+      found: Encontrado
+      adoption: Adopción
+      mate: Pareja

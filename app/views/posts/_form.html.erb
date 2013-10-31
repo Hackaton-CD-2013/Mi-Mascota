@@ -30,7 +30,7 @@
   </div>
   <div class="form-group">
     <label class="control-label">Tipo: </label>
-    <%= select_tag "post[kind]", options_for_select([ Post::LOST, Post::FOUND, Post::ADOPTION, Post::MATE ]), class:'form-control' %>
+    <%= select_tag "post[kind]", post_kinds_for_select, class:'form-control' %>
   </div>
 
   <div class="center">

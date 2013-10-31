@@ -1,10 +1,25 @@
+<h1>SERVICIOS PARA TU MASCOTA</h1>
+<div class="divisor"></div>
+
 <div class="services">
   <div id="map-canvas"></div>
 
   <ul>
     <% @services.each do |service| %>
-      <li>
-        <h3><%= service.name %></h3>
+      <li class="service"
+        data-service-name="<%= service.name %>"
+        data-service-latitude="<%= service.latitude %>"
+        data-service-longitude="<%= service.longitude %>">
+        <%= link_to service do %>
+          <div class="service-header">
+            <h3><%= service.name %></h3>
+            <span class="badge category category-<%= I18n.transliterate service.category.to_s.underscore.downcase %>">
+              <%= service.category %>
+            </span>
+          </div>
+
+          <span class="address"><%= service.address %></span>
+        <% end %>
       </li>
     <% end %>
   </ul>

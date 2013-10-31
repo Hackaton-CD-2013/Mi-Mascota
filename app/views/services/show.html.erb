@@ -1,34 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="service"
+  data-service-name="<%= @service.name %>"
+  data-service-latitude="<%= @service.latitude %>"
+  data-service-longitude="<%= @service.longitude %>">
+  <h1><%= @service.category %>: <%= @service.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @service.name %>
-</p>
+  <% unless @service.description.blank? %>
+    <div class="panel panel-default">
+      <div class="panel-heading">Descripción</div>
+      <div class="panel-body">
+        <p><%= @service.description %></p>
+      </div>
+    </div>
+  <% end %>
 
-<p>
-  <strong>Address:</strong>
-  <%= @service.address %>
-</p>
+  <div class="panel panel-default">
+    <div class="panel-heading">Dirección</div>
+    <div class="panel-body">
+      <p><%= @service.address %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @service.description %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @service.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @service.longitude %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @service.category %>
-</p>
-
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+  <% unless @service.latitude.blank? || @service.longitude.blank? %>
+    <div class="panel panel-default">
+      <div class="panel-heading">¿Cómo llegar?</div>
+      <div class="panel-body">
+        <div id="map-canvas"></div>
+      </div>
+    </div>
+  <% end %>
+</div>

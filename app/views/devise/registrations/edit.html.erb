@@ -24,6 +24,22 @@
       <%= f.password_field :current_password, placeholder: "Contraseña actual" %>
     </div>
 
+    <div>
+      <%= f.text_field :first_name, placeholder: "Nombre" %>
+    </div>
+
+    <div>
+      <%= f.text_field :last_name, placeholder: "Apellido" %>
+    </div>
+
+    <div>
+      <%= f.text_field :phone_number, placeholder: "Teléfono" %>
+    </div>
+
+    <div>
+      <%= f.text_field :location, placeholder: "Dirección" %>
+    </div>
+
     <div><%= f.submit "Actualizar" %></div>
   <% end %>
 

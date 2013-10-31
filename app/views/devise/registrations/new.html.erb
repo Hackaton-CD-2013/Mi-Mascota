@@ -13,7 +13,23 @@
     </div>
 
     <div>
-      <%= f.password_field :password_confirmation, placeholder: "Confirmación de contraseña" %>
+      <%= f.password_field :password_confirmation, placeholder: "Confirma contraseña" %>
+    </div>
+
+    <div>
+      <%= f.text_field :first_name, placeholder: "Nombre" %>
+    </div>
+
+    <div>
+      <%= f.text_field :last_name, placeholder: "Apellido" %>
+    </div>
+
+    <div>
+      <%= f.text_field :phone_number, placeholder: "Teléfono" %>
+    </div>
+
+    <div>
+      <%= f.text_field :location, placeholder: "Dirección" %>
     </div>
 
     <div><%= f.submit "Registrarme" %></div>

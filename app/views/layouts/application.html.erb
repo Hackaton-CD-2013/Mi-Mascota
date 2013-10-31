@@ -45,6 +45,11 @@
             <%= image_tag("ico-home48px.png", alt: "Inicio", class: "home") %>
           <% end %>
           <%= image_tag("logo1.png", alt: "Mi mascota", class: "logo") %>
+          <% if user_signed_in? %>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <%= image_tag("power-48px.png", alt: "cerrar sesion", class: "logout") %>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>

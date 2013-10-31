@@ -6,4 +6,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :pets
+
+  def full_name
+  	name_parts = []
+  	name_parts << first_name unless first_name.blank?
+	name_parts << last_name  unless last_name.blank?
+
+	name_parts.join ' '
+  end
 end

@@ -1,48 +1,45 @@
 <h2>VER ANUNCIO</h2>
 <div class='divisor'></div>
-
-<div class="media">
-  <div class="pull-left">
-    <%= image_tag @post.photo, style: "max-width: 150px",  class: 'frame-img' %>
+<div class='row' >
+ <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+  <div class="media">
+    <div class="pull-left">
+      <%= image_tag @post.photo, style: "max-width: 150px",  class: 'frame-img' %>
+    </div>
+    <div class="media-body">
+      <h3 class="media-heading"><%=@post.name%></h3>
+      <p>Dirección: <%= @post.address %></p>
+      <p>Tipo: <%= @post.kind %></p>
+    </div>
   </div>
-  <div class="media-body">
-    <h3 class="media-heading"><%=@post.name%></h3>
-    <p>Dirección: <%= @post.address %></p>
-    <p>Tipo: <%= @post.kind %></p>
-    <p>Mascota: <%= @post.name %></p>
+
+  <div class="panel panel-default" style='margin-top:5px;'>
+    <div class="panel-heading">Descripci&oacute;n</div>
+    <div class="panel-body">
+      <p><%= @post.description %></p>
+    </div>
   </div>
-</div>
 
-<div class="panel panel-default">
-  <div class="panel-heading">Descripcion</div>
-  <div class="panel-body">
-    <p><%= @post.description %></p>
+  <div class="panel panel-default" style='margin-top:5px;'>
+    <div class="panel-heading">Datos de contacto</div>
+    <div class="panel-body">
+      <p>Nombre: <%= @post.user.full_name %></p>
+      <p>Email: <%= @post.user.email %></p>
+      <p>N&uacute;mero telef&oacute;nico: <%= @post.user.phone_number %></p>
+      <p>Ubicaci&oacute;n: <%= @post.user.location %></p>
+    </div>
   </div>
+
+  <p>
+    <% if @post.pet %>
+      <%= link_to 'Ver mascota', @post.pet %>
+    <% end %>
+  </p>
+
+  <div class="add-button">
+    <% if (current_user == @post.user) %>
+      <%= link_to (image_tag("edit-72px.png", :alt => "Editar")), edit_post_path(@post) %>
+    <% end %>
+  </div>
+ </div>
 </div>
-
-<div class="add-button">
-  <% if (current_user == @post.user) %>
-    <%= link_to (image_tag("edit-72px.png", :alt => "Editar")), edit_post_path(@post) %>
-  <% end %>
-</div>
-<p>
-  <strong>Nombre:</strong>
-  <%= @post.name %>
-</p>
-
-<p>
-  <strong>Dirección:</strong>
-  <%= @post.address %>
-</p>
-
-<p>
-  <strong>Tipo:</strong>
-  <%= @post.kind %>
-</p>
-
-<p>
-  <strong>Mascota:</strong>
-  <%= @post.pet %>
-</p>
-
-<%= link_to 'Editar', edit_post_path(@post) %>

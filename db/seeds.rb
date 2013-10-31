@@ -32,7 +32,8 @@ lost_pet_messages = {
 }
 
 lost_pet_messages.each do |pet_id, message|
-  Post.create kind: Post::LOST, description: message, pet_id: pet_id
+  pet = Pet.find pet_id
+  Post.create kind: Post::LOST, description: message, pet: pet, user: pet.user
 end
 
 Post.create kind: Post::FOUND, description: 'Encontré este perrito en La Trinidad', name: 'Desconocido', user: user_peter

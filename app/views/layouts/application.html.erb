@@ -34,8 +34,6 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCxO4d6suC1rBUhSypV7wxuQvpJIgtbOcQ&sensor=true" %>
-    <%= javascript_include_tag "application" %>
   </head>
   <body>
     <div  id="wrap">
@@ -61,9 +59,11 @@
     </div>
 
     <div id="footer">
-        <div class="container">
-          
-        </div>
+      <div class="container">
       </div>
+    </div>
+
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCxO4d6suC1rBUhSypV7wxuQvpJIgtbOcQ&sensor=true" %>
+    <%= javascript_include_tag "application" %>
   </body>
 </html>

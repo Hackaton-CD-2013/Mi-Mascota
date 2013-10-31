@@ -13,12 +13,12 @@
 
   <% if (@pet.blank?)%>
     <div class="field">
-      <%= f.label :photo %>
+      <%= f.label :Foto %>
       <%= f.file_field :photo %>
     </div>
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
+    <div class="form-group">
+      <label class="control-label">Nombre: </label>
+      <%= f.text_field :name, class:'form-control' %>
     </div>
   <% else %>
     <%= image_tag @pet.photo.to_s, style: "max-width: 150px" %>
@@ -27,19 +27,23 @@
       <%= @pet.name %>
     </p>
   <% end %>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+
+  <div class="form-group">
+    <label class="control-label">Dirección: </label>
+    <%= f.text_field :address, class:'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <label class="control-label">Descripcion: </label>
+    <%= f.text_field :description, class:'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :kind %><br>
-    <%= select_tag "post[kind]", options_for_select([ Post::LOST, Post::FOUND, Post::ADOPTION, Post::MATE ])%>
+  <div class="form-group">
+    <label class="control-label">Tipo: </label>
+    <%= select_tag "post[kind]", options_for_select([ Post::LOST, Post::FOUND, Post::ADOPTION, Post::MATE ]), class:'form-control' %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+  <div class="center">
+    <button type="submit" class="pet-button">
+      <%= image_tag("check-72px.png", :alt => "Enviar") %>
+    </button>
+   </div>
 <% end %>

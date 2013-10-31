@@ -6,9 +6,9 @@
 
 <div class="row pets-grid">
   <% if @pets.blank? %>
-    <span class="no-content">
+    <div class="no-content">
       Aún no tienes mascotas. Agrega una presionando el icono +
-    </span>
+    </div>
   <% end %>
   <% @pets.each do |pet| %>
     <div class="col-xs-6 col-sm-4 col-md-3 polaroid">

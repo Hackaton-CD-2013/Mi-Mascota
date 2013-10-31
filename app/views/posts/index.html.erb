@@ -8,9 +8,9 @@
 
 <div class="row post">
   <% if @posts.blank? %>
-    <span class="no-content">
+    <div class="no-content">
       No hay anuncios creados. Crea un nuevo anuncio presionando el botón +
-    </span>
+    </div>
   <% end %>
   <% @posts.each do |post| %>
     <div class="col-xs-6 col-sm-4 col-md-3 polaroid">
